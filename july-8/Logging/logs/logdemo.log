@@ -1,0 +1,18 @@
+2025-08-08T12:18:51.707+05:30  WARN 14128 --- [Logging] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-08-08T12:18:51.763+05:30  WARN 14128 --- [Logging] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-08-08T12:18:51.872+05:30 ERROR 14128 --- [Logging] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2025-08-08T12:20:38.902+05:30 ERROR 7756 --- [Logging] [http-nio-8080-exec-1] c.e.Logging.controller.HomeController    : --Error--
+2025-08-08T12:20:38.908+05:30  WARN 7756 --- [Logging] [http-nio-8080-exec-1] c.e.Logging.controller.HomeController    : --WARN--
