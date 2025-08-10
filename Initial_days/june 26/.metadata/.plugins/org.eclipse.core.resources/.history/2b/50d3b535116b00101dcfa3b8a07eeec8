@@ -1,9 +1,0 @@
-package com.wipro.test;
-
-public class Testing {
-
-	public void testCases() {
-		System.out.println("Hiii");
-	}
-
-}

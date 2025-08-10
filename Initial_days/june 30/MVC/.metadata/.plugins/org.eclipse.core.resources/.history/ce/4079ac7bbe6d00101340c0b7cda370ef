@@ -1,7 +1,0 @@
-package com.wipro.webmvc1.service.impl;
-
-import com.wipro.webmvc1.service.CarService;
-
-public class CarServiceimpl implements CarService{
-
-}

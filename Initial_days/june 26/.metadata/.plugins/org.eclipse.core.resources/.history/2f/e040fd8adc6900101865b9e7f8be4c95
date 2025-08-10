@@ -1,5 +1,0 @@
-package com.wipro.thread;
-
-public class AlphaThread extends Thread {
-
-}

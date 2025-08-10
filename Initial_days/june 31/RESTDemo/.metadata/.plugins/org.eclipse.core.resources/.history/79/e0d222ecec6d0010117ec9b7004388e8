@@ -1,5 +1,0 @@
-package com.wipro.restdemo.controller;
-
-public class WeatherController {
-
-}

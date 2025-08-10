@@ -1,6 +1,0 @@
-package com.wipro.springdemo.beans;
-
-public class Display {
-	int size;
-
-}
