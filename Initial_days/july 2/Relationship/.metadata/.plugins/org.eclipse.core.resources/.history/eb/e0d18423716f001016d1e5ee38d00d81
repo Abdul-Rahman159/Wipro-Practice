@@ -1,0 +1,22 @@
+package com.wipro.entity.relationaldemo.service.impl;
+
+import java.util.List;
+
+import com.wipro.entity.relationaldemo.entity.Movie;
+import com.wipro.entity.relationaldemo.service.MovieService;
+
+public class MovieServiceImpl implements MovieService {
+
+	@Override
+	public void save(Movie movie) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<Movie> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

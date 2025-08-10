@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+D:\Wipro\Code\Day_7_27-7-2025\.metadata\.plugins\org.eclipse.jdt.core
+2426252019.index
+3487185401.index
+1865797976.index

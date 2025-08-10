@@ -1,0 +1,40 @@
+package com.wipro.datetimedemo;
+
+import java.time.LocalDate;
+
+public class DateDiffEx12 {
+	
+	public static void getDateDiff(LocalDate dt1, LocalDate dt2) {
+    
+        if (dt1.isAfter(dt2)) {
+            LocalDate temp = dt1;
+            dt1 = dt2;
+            dt2 = temp;
+        }
+
+        int years = dt2.getYear() - dt1.getYear();
+        int months = dt2.getMonthValue() - dt1.getMonthValue();
+        int days = dt2.getDayOfMonth() - dt1.getDayOfMonth();
+
+        if (days < 0) {
+            months--;
+            LocalDate prevMonth = dt2.minusMonths(1);
+            days += prevMonth.lengthOfMonth();
+        }
+
+        if (months < 0) {
+            years--;
+            months += 12;
+        }
+
+        System.out.println("Difference is " + years + " years, " + months + " months, and " + days + " days.");
+    }
+
+    public static void main(String[] args) {
+        LocalDate date1 = LocalDate.of(2000, 5, 15);
+        LocalDate date2 = LocalDate.of(2025, 7, 24);
+
+        getDateDiff(date1, date2);
+    }
+
+}

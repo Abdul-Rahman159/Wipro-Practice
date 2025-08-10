@@ -1,0 +1,5 @@
+package com.wipro.entity.relationaldemo.service;
+
+public interface EmployeeService {
+
+}

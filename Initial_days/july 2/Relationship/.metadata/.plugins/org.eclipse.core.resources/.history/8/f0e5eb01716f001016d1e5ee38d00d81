@@ -1,0 +1,6 @@
+package com.wipro.entity.relationaldemo.service;
+
+public interface MovieService {
+	void save(Movie movie);
+	List<Movie> findAll();
+}

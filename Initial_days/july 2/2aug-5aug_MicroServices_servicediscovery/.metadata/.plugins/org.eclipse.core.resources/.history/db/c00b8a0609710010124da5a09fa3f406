@@ -1,0 +1,16 @@
+package com.wipro.orderms.service;
+
+import org.springframework.stereotype.Service;
+
+import com.wipro.orderms.entity.Order;
+import com.wipro.orderms.repo.OrderRepo;
+
+@Service
+public class OrderService {
+	@Autowired
+    OrderRepo orderRepo;
+
+    public Order save(Order order) {
+        return orderRepo.save(order);
+    }
+}

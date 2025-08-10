@@ -1,0 +1,13 @@
+package com.wipro.anonymous;
+
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+
+public class ConsumerEx8 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ZonedDateTime  z= ZonedDateTime.now(ZoneId.of("Europe/London"));
+	}
+
+}

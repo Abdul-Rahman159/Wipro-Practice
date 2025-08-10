@@ -1,0 +1,17 @@
+package com.wipro.oop;
+
+public class HDFC implements BankOps {
+
+	@Override
+	public void deposit(double amount, String accNumber) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public double withdraw(double amount, String accNumber) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

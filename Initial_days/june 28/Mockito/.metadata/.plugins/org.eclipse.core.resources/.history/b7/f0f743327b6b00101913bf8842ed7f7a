@@ -1,0 +1,53 @@
+package com.wipro.mockitodemo;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class App {
+    public static void main(String[] args) {
+        String jdbcURL = "jdbc:mysql://localhost:3306/your_database_name";
+        String dbUser = "root";         // change if needed
+        String dbPassword = "password"; // change if needed
+
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        try {
+            // 1. Load the JDBC driver (optional for newer versions)
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // 2. Establish the connection
+            connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
+
+            // 3. Create SQL insert query
+            String sql = "INSERT INTO employee (emp_name, department) VALUES (?, ?)";
+
+            // 4. Create PreparedStatement
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, "John Doe");      // emp_name
+            preparedStatement.setString(2, "IT");            // department
+
+            // 5. Execute the query
+            int rowsInserted = preparedStatement.executeUpdate();
+
+            if (rowsInserted > 0) {
+                System.out.println("A new employee was inserted successfully!");
+            }
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (preparedStatement != null) preparedStatement.close();
+                if (connection != null) connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+

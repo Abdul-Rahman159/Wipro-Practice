@@ -1,0 +1,15 @@
+package com.wipro.orderms.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Payment {
+    int id;
+    int orderId;
+    double amount;
+    boolean paymentStatus;
+}

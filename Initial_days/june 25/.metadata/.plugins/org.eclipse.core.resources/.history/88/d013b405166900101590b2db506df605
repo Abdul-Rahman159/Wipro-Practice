@@ -1,0 +1,20 @@
+package com.wipro.anonymous;
+
+import java.util.function.Predicate;
+
+public class PredicateEx5 {
+
+	public static void main(String[] args) {
+		String str1 = "JANHVEE";
+        String str2 = "mahajan";
+
+        Predicate<String> isUpperCase = s -> s.equals(s.toUpperCase());
+
+        Predicate<String> isLowerCase = s -> s.equals(s.toLowerCase());
+
+        System.out.println("Is '" + str1 + "' uppercase? " + isUpperCase.test(str1));
+        System.out.println("Is '" + str1 + "' lowercase? " + isLowerCase.test(str1));
+
+	}
+
+}

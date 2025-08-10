@@ -1,0 +1,17 @@
+package com.wipro.optional;
+
+import java.util.Optional;
+
+public class OptionalEx16 {
+
+	public static void main(String[] args) {
+		Optional<Integer> num = Optional.ofNullable(12);
+        if (num.isPresent()) {
+            System.out.println(num.get());
+        } else {
+            System.out.println("Student  is not present");
+        }
+
+	}
+
+}

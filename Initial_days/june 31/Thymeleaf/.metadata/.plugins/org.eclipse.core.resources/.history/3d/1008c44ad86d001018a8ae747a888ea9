@@ -1,0 +1,5 @@
+package com.wipro.thymeleafdemo.controller;
+
+public class HelloController {
+
+}

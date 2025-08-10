@@ -1,0 +1,7 @@
+package com.wipro.aopvac.config;
+
+@Configuration
+@EnableAspectJAutoProxy
+public class AspectConfig {
+
+}

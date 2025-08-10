@@ -1,0 +1,22 @@
+package com.wipro.aopvac;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.wipro.aopvac.config.AspectConfig;
+import com.wipro.aopvac.service.AirTravelProcess;
+
+public class App {
+	public static void main(String[] args) {
+        ApplicationContext context = new AnnotationConfigApplicationContext(AspectConfig.class);
+        AirTravelProcess travel = context.getBean(AirTravelProcess.class);
+
+        try {
+            travel.checkIn(false); // Change to true to simulate success
+            travel.collectBoardingPass();
+            travel.doSecurityCheck();
+            travel.doBoarding();
+        } catch (Exception ex) {
+        }
+    }
+}

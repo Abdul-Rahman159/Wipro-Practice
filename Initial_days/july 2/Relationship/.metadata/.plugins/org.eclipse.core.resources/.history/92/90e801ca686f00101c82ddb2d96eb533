@@ -1,0 +1,30 @@
+package com.wipro.entity.relationaldemo.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.wipro.entity.relationaldemo.entity.Person;
+import com.wipro.entity.relationaldemo.repo.PersonRepo;
+import com.wipro.entity.relationaldemo.service.PersonService;
+
+@Service
+public class PersonServiceImpl implements PersonService {
+
+	@Autowired
+	PersonRepo personRepo;
+	
+	@Override
+	public void save(Person person) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<Person> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

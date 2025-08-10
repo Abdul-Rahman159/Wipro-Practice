@@ -1,0 +1,18 @@
+package com.wipro.junit;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class JUnitTestEx8 {
+
+	@Test
+	void test() {
+		String input = null;
+
+        assertThrows(NullPointerException.class, () -> {
+            input.toUpperCase();
+        }, "Expected NullPointerException when calling toUpperCase on null");
+	}
+
+}

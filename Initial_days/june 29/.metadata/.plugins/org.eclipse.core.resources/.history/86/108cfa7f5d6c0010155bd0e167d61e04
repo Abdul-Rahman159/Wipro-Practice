@@ -1,0 +1,19 @@
+package com.wipro.springdemo;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.wipro.springdemo.beans.Department;
+
+public class App {
+
+	public static void main(String[] args) {
+		ApplicationContext ctx= new ClassPathXmlApplicationContext("beans.xml");
+      Department student=(Department)ctx.getBean("student");
+      student.setDeptCode("Fin");
+      student.setDepartmentName("Finance");
+      System.out.println(student);    
+
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.wipro.springtest.controller;
+
+public class HomeController {
+
+}

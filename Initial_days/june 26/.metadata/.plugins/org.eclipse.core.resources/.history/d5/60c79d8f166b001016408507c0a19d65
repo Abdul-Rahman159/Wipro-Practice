@@ -1,0 +1,10 @@
+package com.wipro.junitest;
+
+
+public class TestJu {
+	@Test
+	void testTwo() {
+        System.out.println("Hello");
+    }
+
+}

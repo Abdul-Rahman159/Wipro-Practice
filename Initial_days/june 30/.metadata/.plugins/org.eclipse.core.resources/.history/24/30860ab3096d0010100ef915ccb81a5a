@@ -1,0 +1,12 @@
+package com.wipro.aopvac.exception;
+
+public class NoSeatAvailableException {
+	String message;
+
+	public NoSeatAvailableException(String message) {
+		super();
+		this.message = message;
+	}
+
+	
+}

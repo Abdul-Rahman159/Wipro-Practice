@@ -1,0 +1,39 @@
+package com.wipro.stream;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class StreamEx14 {
+	public static void main(String[] args) {
+		FoodItemclass f1 = new FoodItemclass("Noodles", "Veg", "Chinese", 60 );
+		FoodItemclass f2 = new FoodItemclass("mango sticky rice", "Veg", "Thai", 160 );
+		FoodItemclass f3 = new FoodItemclass("Pizza", "Veg", "Continental", 260 );
+		FoodItemclass f4 = new FoodItemclass("Manchurian", "Veg", "Chinese", 80 );
+		FoodItemclass f5 = new FoodItemclass("Curry", "Veg", "Thai", 160 );
+		FoodItemclass f6 = new FoodItemclass("Fried Rice", "Veg", "Chinese",100 );
+		
+		List<FoodItemclass> foodList= new ArrayList<>();
+		foodList.add(f1);
+		foodList.add(f2);
+		foodList.add(f3);
+		foodList.add(f4);
+		foodList.add(f5);
+		foodList.add(f6);
+		
+		Comparator<FoodItemclass> comp= (a,b)->{
+			Double d1= Double.valueOf(a.price);
+			Double d2= Double.valueOf(b.price);
+			return d1.compareTo(d2);
+		};
+		
+		List<FoodItemclass> pList= foodList
+		.stream()
+		.filter(p->p.getCuisine().equalsIgnoreCase("Chinese"))
+		.sorted(comp.reversed())
+		.collect(Collectors.toList());
+		
+		System.out.println(pList);
+	}
+}

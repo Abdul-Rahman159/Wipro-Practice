@@ -1,0 +1,23 @@
+spring.application.name=payment-ms
+
+server.port=9011
+spring.datasource.url = jdbc:mysql://localhost:3306/amazonpaymdb?allowPublicKeyRetrieval=true&useSSL=false
+spring.datasource.username = root
+spring.datasource.password = Janhvee@12
+
+## Hibernate Properties
+# The SQL dialect makes Hibernate generate better SQL for the chosen database
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL8Dialect
+
+# Hibernate ddl auto (create, create-drop, validate, update)
+spring.jpa.hibernate.ddl-auto = update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+
+management.endpoints.web.exposure.include=* 
+management.endpoints.web.exposure.include=prometheus,health,info
+management.endpoint.health.show-details=always
+management.health.circuitbreakers.enabled=true
+
+spring.config.import=optional:configserver:http://localhost:8888

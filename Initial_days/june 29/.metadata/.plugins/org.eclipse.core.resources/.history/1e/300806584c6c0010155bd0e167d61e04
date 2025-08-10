@@ -1,0 +1,5 @@
+package com.wipro.hibernate.menu;
+
+public class PanMenu {
+
+}

@@ -1,0 +1,29 @@
+package com.wipro.mockitodemo;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import org.junit.jupiter.api.Test;
+
+class JunitTestcase {
+
+	@Test
+    public void testPlaceOrder() {
+        // 1. Create mock object of OrderService
+        OrderService mockOrderService = mock(OrderService.class);
+
+        // 2. Define behavior: when placeOrder("ORD-01") is called, return "successful"
+        when(mockOrderService.placeOrder("ORD-01")).thenReturn("successful");
+
+        // 3. Call the mocked method
+        String result = mockOrderService.placeOrder("ORD-01");
+
+        // 4. Verify the result
+        assertEquals("successful", result);
+
+        // 5. Verify that the method was actually called with "ORD-01"
+        verify(mockOrderService).placeOrder("ORD-01");
+
+}

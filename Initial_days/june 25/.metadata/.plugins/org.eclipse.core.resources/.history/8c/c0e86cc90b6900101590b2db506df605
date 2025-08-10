@@ -1,0 +1,15 @@
+package com.wipro.anonymous;
+
+public class AnonymousInnerDemo {
+
+	public static void main(String[] args) {
+		BankOps savingsAccount = new BankOps() {
+			@Override
+			public void deposit() {
+				System.out.println("")
+			}
+		}
+
+	}
+
+}

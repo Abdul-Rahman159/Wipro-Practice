@@ -1,0 +1,21 @@
+package com.wipro.orderms.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.wipro.orderms.entity.Order;
+import com.wipro.orderms.repo.OrderRepo;
+import com.wipro.orderms.service.OrderService;
+import com.wipro.payment_ms.entity.Payment;
+import com.wipro.payment_ms.repo.PaymentRepo;
+
+@Service
+public class OrderServiceImpl implements OrderService{
+	@Autowired
+	OrderRepo orderRepo;
+	
+	@Override
+	public void save(Order order) {
+		orderRepo.save(order);
+    }
+}

@@ -1,0 +1,14 @@
+ <beans xmlns="http://www.springframework.org/schema/beans"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.springframework.org/schema/beans
+                               http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <bean id="department" class="com.wipro.springdemo.beans.College">
+  		<property name="collegeName"  value="SSGMCE" />
+        <property name="department"  value="extc" />
+  </bean>                     
+                               
+  <bean id="department" class="com.wipro.springdemo.beans.Department">
+  		<property name="deptCode"  value="Fin" />
+        <property name="capacity"  value="Finance" />
+  </bean>
+</beans>

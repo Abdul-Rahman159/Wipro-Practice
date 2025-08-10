@@ -1,0 +1,19 @@
+package com.wipro.junit;
+
+public class JUnitTestCase {
+	    @Test
+	    public void testIsUpperCaseTrue() {
+	        assertTrue(StringUtils.isUpperCase("HELLO"), "Should return true for uppercase string");
+	    }
+
+	    @Test
+	    public void testIsUpperCaseFalse() {
+	        assertFalse(StringUtils.isUpperCase("Hello"), "Should return false for mixed case string");
+	    }
+
+	    @Test
+	    public void testIsUpperCaseEmptyString() {
+	        assertTrue(StringUtils.isUpperCase(""), "Empty string should be considered uppercase");
+	    }
+
+}

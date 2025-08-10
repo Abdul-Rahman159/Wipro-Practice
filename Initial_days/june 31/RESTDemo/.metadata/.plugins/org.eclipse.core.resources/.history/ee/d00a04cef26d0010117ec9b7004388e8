@@ -1,0 +1,18 @@
+package com.wipro.restdemo.controller;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.wipro.restdemo.dto.Mobile;
+
+@RestController
+public class MobileController {
+
+	@PostMapping("/mobile")
+	public String receiveMobile(@RequestBody Mobile mobile) {
+	      System.out.println(mobile);
+	      return mobile;
+	}
+}
+

@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * 
+ */
+module Day6_Java_code {
+	requires org.junit.jupiter.api;
+}

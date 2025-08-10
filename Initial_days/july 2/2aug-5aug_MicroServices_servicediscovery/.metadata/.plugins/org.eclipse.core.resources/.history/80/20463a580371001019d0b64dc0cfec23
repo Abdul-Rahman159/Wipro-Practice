@@ -1,0 +1,34 @@
+package com.wipro.orderms.controller;
+
+import org.springframework.http.*;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
+
+@RestController
+@RequestMapping("/order")
+public class OrderController {
+
+    @PostMapping
+    public ResponseEntity<Order> createOrder(@RequestBody Order order) {
+        order.setOrderStatus("I"); // Initial status: In Progress
+
+        Payment payment = new Payment();
+        payment.setOrderId(order.getId());
+
+        RestTemplate restTemplate = new RestTemplate();
+        String paymentUrl = "http://localhost:9011/payment";
+
+        try {
+            ResponseEntity<Payment> response = restTemplate.postForEntity(paymentUrl, payment, Payment.class);
+            if (response.getStatusCode() == HttpStatus.OK && response.getBody().isPaymentStatus()) {
+                order.setOrderStatus("P"); // Payment successful
+            } else {
+                order.setOrderStatus("C"); // Payment failed
+            }
+        } catch (Exception e) {
+            order.setOrderStatus("C"); // Exception in payment
+        }
+
+        return ResponseEntity.ok(order);
+    }
+}

@@ -1,0 +1,43 @@
+package com.wipro.orderms.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.*;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
+
+import com.wipro.orderms.entity.Order;
+import com.wipro.orderms.service.OrderService;
+import com.wipro.payment_ms.entity.Payment;
+
+@RestController
+@RequestMapping("/order")
+public class OrderController {
+	@Autowired
+	OrderService orderService;
+	
+    @PostMapping
+    public ResponseEntity<Order> createOrder(@RequestBody Order order) {
+    
+    	orderService.save(order);
+    	order.setOrderStatus("I");
+
+        Payment payment = new Payment();
+        payment.setOrderId(order.getId());
+
+        RestTemplate restTemplate = new RestTemplate();
+        String paymentUrl = "http://localhost:9011/payment";
+
+        try {
+            ResponseEntity<Payment> response = restTemplate.postForEntity(paymentUrl, payment, Payment.class);
+            if (response.getStatusCode() == HttpStatus.OK && response.getBody().isPaymentStatus()) {
+                order.setOrderStatus("P");
+            } else {
+                order.setOrderStatus("C");
+            }
+        } catch (Exception e) {
+            order.setOrderStatus("C");
+        }
+
+        return ResponseEntity.ok(order);
+    }
+}

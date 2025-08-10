@@ -1,0 +1,26 @@
+package com.wipro.restdemo.service;
+
+@Service
+public class MobileService {
+
+    @Autowired
+    private MobileRepository repo;
+
+    public void addMobile(Mobile mobile) {
+        repo.addMobile(mobile);
+    }
+
+    public List<Mobile> getAllMobiles() {
+        return repo.getAllMobiles();
+    }
+
+    public String updateMobile(Mobile mobile) {
+        boolean updated = repo.updateMobile(mobile);
+        return updated ? "Mobile updated!" : "Mobile with ID " + mobile.getId() + " not found.";
+    }
+
+    public String deleteMobile(int id) {
+        boolean deleted = repo.deleteMobile(id);
+        return deleted ? "Mobile deleted!" : "Mobile with ID " + id + " not found.";
+    }
+}

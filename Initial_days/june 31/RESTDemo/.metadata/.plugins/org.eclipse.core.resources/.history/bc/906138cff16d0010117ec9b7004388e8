@@ -1,0 +1,7 @@
+package com.wipro.restdemo.dto;
+
+public class Mobile {
+	String make;
+    String modelNumber;
+    double price;
+}

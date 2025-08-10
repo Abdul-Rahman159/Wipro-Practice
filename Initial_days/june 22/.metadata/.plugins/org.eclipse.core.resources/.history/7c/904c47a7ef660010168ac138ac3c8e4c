@@ -1,0 +1,36 @@
+package com.wipro.basic;
+
+public class StringEx20 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 String str1 = "listen";
+	        String str2 = "silent";
+
+	        // Convert both strings to lowercase
+	        str1 = str1.toLowerCase();
+	        str2 = str2.toLowerCase();
+
+	        // Check if lengths are same
+	        if (str1.length() != str2.length()) {
+	            System.out.println("Not anagrams (lengths are different)");
+	            return;
+	        }
+
+	        // Convert strings to char arrays
+	        char[] arr1 = str1.toCharArray();
+	        char[] arr2 = str2.toCharArray();
+
+	        // Sort the character arrays
+	        Arrays.sort(arr1);
+	        Arrays.sort(arr2);
+
+	        // Compare sorted arrays
+	        if (Arrays.equals(arr1, arr2)) {
+	            System.out.println("The strings are anagrams.");
+	        } else {
+	            System.out.println("The strings are NOT anagrams.");
+	        }
+	}
+
+}

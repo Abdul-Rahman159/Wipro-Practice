@@ -1,0 +1,8 @@
+package com.wipro.orderms.dto;
+
+@Data
+public class OrderDTO {
+	String orderNumber;
+    double orderValue;
+    List<Payment> payment;
+}

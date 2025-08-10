@@ -1,0 +1,22 @@
+package com.wipro.entity.relationaldemo.service.impl;
+
+import java.util.List;
+
+import com.wipro.entity.relationaldemo.entity.Person;
+import com.wipro.entity.relationaldemo.service.PersonService;
+
+public class PersonServiceImpl implements PersonService {
+
+	@Override
+	public void save(Person person) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<Person> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

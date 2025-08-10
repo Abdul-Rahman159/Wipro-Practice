@@ -1,0 +1,5 @@
+package com.wipro.entity.relationaldemo.entity;
+
+public class Genre {
+
+}

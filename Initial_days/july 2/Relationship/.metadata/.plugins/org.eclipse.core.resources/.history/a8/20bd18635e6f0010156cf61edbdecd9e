@@ -1,0 +1,16 @@
+package com.wipro.entity.relationaldemo.service.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.wipro.entity.relationaldemo.service.EmployeeService;
+
+@Service
+public class EmployeeServiceImpl implements EmployeeService{
+	@Autowired
+    EmployeeRepo employeeRepo;
+
+    @Override
+    public Employee saveEmployee(Employee employee) {
+        return employeeRepo.save(employee);
+    }
+}

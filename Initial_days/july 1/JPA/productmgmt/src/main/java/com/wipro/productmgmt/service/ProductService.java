@@ -1,0 +1,21 @@
+package com.wipro.productmgmt.service;
+
+import java.util.List;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+import com.wipro.productmgmt.entity.Product;
+
+@Service
+public interface ProductService {
+	void save(Product product);
+	List<Product> findAll();
+	Product findById(int id);
+	void deleteById(int id);
+	List<Product> findByProductMake(String productMake);
+	List<Product> findByProductMakeOrderByProductNameDesc(String productMake);
+	List<Product> findByProductNameAndProductMakeOrderByProductNameDesc(String productName, String productMake);
+	Page<Product>  findAll(Pageable p); 
+}

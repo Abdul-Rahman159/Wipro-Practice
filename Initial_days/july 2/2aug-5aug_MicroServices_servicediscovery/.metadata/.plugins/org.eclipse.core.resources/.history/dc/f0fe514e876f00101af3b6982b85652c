@@ -1,0 +1,5 @@
+package com.wipro.payment_ms.entity;
+
+public class Payment {
+
+}

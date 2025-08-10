@@ -1,0 +1,7 @@
+spring.application.name=orderms
+server.port=9012
+
+logging.level.com.netflix.discovery=DEBUG
+logging.level.org.springframework.cloud.netflix.eureka=DEBUG
+
+spring.config.import=optional:configserver:http://localhost:8888

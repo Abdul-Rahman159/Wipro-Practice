@@ -1,0 +1,8 @@
+package com.wipro.productmgmt.service;
+
+public interface ProductService {
+	void save(Product product);
+	List<Product> findAll();
+	Product findById(int id);
+	void deleteById(int id);
+}

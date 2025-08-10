@@ -1,0 +1,7 @@
+package com.wipro.junit;
+
+public class JunitEx7 {
+	public static boolean isUpperCase(String input) {
+        return input.equals(input.toUpperCase());
+    }vvvvvvvv
+}

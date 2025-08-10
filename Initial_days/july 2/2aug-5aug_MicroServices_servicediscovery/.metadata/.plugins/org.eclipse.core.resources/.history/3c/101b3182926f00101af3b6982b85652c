@@ -1,0 +1,13 @@
+package com.wipro.payment_ms.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.wipro.payment_ms.entity.Payment;
+
+public interface PaymentService {
+	void save(Payment payment);
+	List<Payment> findAll();
+	Optional<Payment> findById(Long id);
+	boolean update(Long id, Payment updatedPayment);
+}

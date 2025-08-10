@@ -1,0 +1,17 @@
+package com.wipro.restdemo.dto;
+
+public class Mobile {
+	String make;
+    String modelNumber;
+    double price;
+    int id;
+    
+	public Mobile() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+    
+    
+}

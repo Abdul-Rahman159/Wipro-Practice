@@ -1,0 +1,44 @@
+package com.wipro.productmgmt.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.wipro.productmgmt.entity.Product;
+import com.wipro.productmgmt.repo.ProductRepo;
+import com.wipro.productmgmt.service.ProductService;
+
+@Service
+public class ProductServiceimpl implements ProductService{
+	
+	@Autowired
+	ProductRepo productRepo;
+	
+	@Override
+	public void save(Product product) {
+		ProductRepo.save(product);
+	}
+
+	@Override
+	public List<Product> findAll() {
+	 
+		return productRepo.findAll();
+	}
+
+	@Override
+	public TouristPlace findById(int id) {
+		Optional<TouristPlace> touristPlace=touristPlaceRepo.findById(id);
+		if(!touristPlace.isEmpty())
+		{
+			return touristPlace.get();
+		}
+		return null;
+	}
+
+	@Override
+	public void deleteById(int id) {
+		 
+		touristPlaceRepo.deleteById(id);
+	}
+}

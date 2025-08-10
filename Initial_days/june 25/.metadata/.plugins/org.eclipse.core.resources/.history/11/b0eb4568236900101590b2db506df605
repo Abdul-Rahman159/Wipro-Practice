@@ -1,0 +1,13 @@
+package com.wipro.anonymous;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class FunctionEx10 {
+
+	public static void main(String[] args) {
+		List<String> strList = Arrays.asList("Jan", "Feb", "Mar", "Apr");
+
+	}
+
+}

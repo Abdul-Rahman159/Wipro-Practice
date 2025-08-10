@@ -1,0 +1,10 @@
+package com.wipro.payment_ms.service;
+
+import java.util.List;
+
+import com.wipro.payment_ms.entity.Payment;
+
+public class PaymentService {
+	void save(Payment payment);
+	List<Payment> findAll();
+}

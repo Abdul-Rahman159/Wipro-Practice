@@ -1,0 +1,5 @@
+package com.wipro.hibernate.entity;
+
+public class App {
+
+}

@@ -1,0 +1,26 @@
+package com.wipro.anonymous;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+public class FunctionEx10 {
+
+	public static void main(String[] args) {
+	
+		
+		List<String> names = Arrays.asList("Jayanta", "Amit", "Vasu");
+
+        // Function to convert List<String> to List<Integer> of lengths
+        Function<List<String>, List<Integer>> getLengths = list ->
+            list.stream()
+                .map(String::length) // get length of each string
+                .collect(Collectors.toList());
+
+        List<Integer> lengths = getLengths.apply(names);
+        System.out.println("String lengths: " + lengths);
+
+	}
+
+}

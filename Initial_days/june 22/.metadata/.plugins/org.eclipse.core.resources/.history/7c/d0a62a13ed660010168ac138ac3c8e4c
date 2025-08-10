@@ -1,0 +1,34 @@
+package com.wipro.basic;
+
+public class StringEx18 {
+
+	public static void main(String[] args) {
+		
+		        String word = "Madam"; // You can change this to test other words
+
+		        // Convert to lowercase to ignore case sensitivity
+		        word = word.toLowerCase();
+
+		        boolean isPalindrome = true;
+
+		        // Loop through the string
+		        for (int i = 0; i < word.length() / 2; i++) {
+		            // Compare characters from front and back
+		            if (word.charAt(i) != word.charAt(word.length() - 1 - i)) {
+		                isPalindrome = false;
+		                break; // No need to check further
+		            }
+		        }
+
+		        // Print the result
+		        if (isPalindrome) {
+		            System.out.println("It is a palindrome.");
+		        } else {
+		            System.out.println("It is not a palindrome.");
+		        }
+		    
+
+
+	}
+
+}

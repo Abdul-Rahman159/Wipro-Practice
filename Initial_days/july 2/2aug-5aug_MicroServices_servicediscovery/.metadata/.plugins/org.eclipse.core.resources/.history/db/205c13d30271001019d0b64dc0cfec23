@@ -1,0 +1,14 @@
+package com.wipro.orderms.entity;
+
+import com.wipro.payment_ms.entity.Payment;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Entity
+@Table(name="order")
+@Data
+public class Order {
+
+}

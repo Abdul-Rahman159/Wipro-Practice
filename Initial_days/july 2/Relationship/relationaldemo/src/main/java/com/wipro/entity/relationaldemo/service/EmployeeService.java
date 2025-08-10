@@ -1,0 +1,10 @@
+package com.wipro.entity.relationaldemo.service;
+
+import java.util.List;
+
+import com.wipro.entity.relationaldemo.entity.Employee;
+
+public interface EmployeeService {
+    Employee saveEmployee(Employee employee);
+    List<Employee> getAllEmployees();
+}

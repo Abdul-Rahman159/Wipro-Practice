@@ -1,0 +1,9 @@
+package com.wipro.orderms.config;
+
+public class AppConfig {
+
+	@Bean
+	public RestTemplate restTemplate() {
+		return new RestTemplate();
+	}
+}

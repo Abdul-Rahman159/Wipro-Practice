@@ -1,0 +1,48 @@
+package com.wipro.productmgmt.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/product")
+public class ProductController {
+	@Autowired
+	ProductService productService;
+	
+	@PostMapping
+	void save(@RequestBody TouristPlace touristPlace)
+	{
+		touristPlaceService.save(touristPlace);
+	}
+	
+	@GetMapping
+	List<TouristPlace> findAll()
+	{
+		return touristPlaceService.findAll();
+		
+	}
+	
+	
+	@GetMapping("/{id}")
+	TouristPlace findById(@PathVariable int id)
+	{
+		return touristPlaceService.findById(id);
+		
+	}
+	
+	@PutMapping 
+	void update(@RequestBody TouristPlace touristPlace)
+	{
+		  touristPlaceService.save(touristPlace);
+		
+	}
+	
+	@DeleteMapping("/{id}")
+	void deleteById(@PathVariable int id)
+	{
+		  touristPlaceService.deleteById(id);
+		
+	}
+
+}

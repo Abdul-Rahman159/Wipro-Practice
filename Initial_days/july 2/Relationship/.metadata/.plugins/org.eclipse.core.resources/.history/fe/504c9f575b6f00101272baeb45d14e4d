@@ -1,0 +1,5 @@
+package com.wipro.entity.relationaldemo.repo;
+
+public interface EmployeeRepo {
+
+}

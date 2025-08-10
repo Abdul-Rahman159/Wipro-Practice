@@ -1,0 +1,14 @@
+package com.wipro.orderms.dto;
+
+import java.util.List;
+
+import com.wipro.payment_ms.entity.Payment;
+
+import lombok.Data;
+
+@Data
+public class OrderDTO {
+	String orderNumber;
+    double orderValue;
+    List<Payment> payment;
+}
