@@ -1,0 +1,14 @@
+package com.wipro.fileio;
+
+public class FileIOEx5 {
+
+	public static void main(String[] args) {
+		String inputFileName = "";
+		String outputFileName = "";
+		
+		try {
+			FileInputStream fi = new FileInputStream(inputFileName);
+		}
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.wipro.hibernate.util;
+
+public class HibernateUtil {
+
+}

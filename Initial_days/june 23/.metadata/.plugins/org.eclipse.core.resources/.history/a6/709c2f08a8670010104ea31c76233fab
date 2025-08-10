@@ -1,0 +1,17 @@
+package com.wipro.exception;
+
+public class ExceptionEx6 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String fName = null;
+		try {
+			
+			String fNameUpperCase = fName.toUpperCase();
+		}
+		catch (Exception ex){
+			System.out.println();
+		}
+	}
+
+}

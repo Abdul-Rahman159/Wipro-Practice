@@ -1,0 +1,13 @@
+package com.wipro.junitest;
+import org.junit.jupiter.api.Test;
+
+
+
+
+public class TestJu {
+	@Test
+	void testTwo() {
+        System.out.println("Hello");
+    }
+
+}

@@ -1,0 +1,5 @@
+package com.wipro.restdemo.service;
+
+public class MobileService {
+
+}

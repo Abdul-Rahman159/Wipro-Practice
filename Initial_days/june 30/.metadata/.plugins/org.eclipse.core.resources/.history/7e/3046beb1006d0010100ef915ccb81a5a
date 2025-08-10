@@ -1,0 +1,23 @@
+package com.wipro.aopvac.service;
+
+public class AirTravelProcess {
+	public void checkIn()
+	{
+		System.out.println("--checkIn--");
+	}
+	
+	public void collectBoardingPass()
+	{
+		System.out.println("--collectBoardingPass--");
+	}
+	
+	public void doSecurityCheck()
+	{
+		System.out.println("--doSecurityCheck--");
+	}
+	
+	public void doBoarding()
+	{
+		System.out.println("--doBoarding--");
+	}
+}

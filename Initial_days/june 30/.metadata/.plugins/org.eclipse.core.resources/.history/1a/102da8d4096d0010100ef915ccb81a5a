@@ -1,0 +1,30 @@
+package com.wipro.aopvac.service;
+
+import org.springframework.stereotype.Component;
+import com.wipro.aopvac.exception.NoSeatAvailableException;
+
+@Component
+public class AirTravelProcess {
+	public void checkIn(boolean flag) throws NoSeatAvailableException {
+        if (flag) {
+            System.out.println("Check-in successful.");
+        } else {
+            throw new NoSeatAvailableException("No seat available for check-in.");
+        }
+    }
+	
+	public void collectBoardingPass()
+	{
+		System.out.println("--collectBoardingPass--");
+	}
+	
+	public void doSecurityCheck()
+	{
+		System.out.println("--doSecurityCheck--");
+	}
+	
+	public void doBoarding()
+	{
+		System.out.println("--doBoarding--");
+	}
+}

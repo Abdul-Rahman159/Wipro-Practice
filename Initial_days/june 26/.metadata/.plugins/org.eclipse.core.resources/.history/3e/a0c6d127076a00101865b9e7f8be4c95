@@ -1,0 +1,11 @@
+package com.wipro.solid;
+
+public class PhonePe implements PaymentEx6 {
+
+	@Override
+	public void pay(double amount) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

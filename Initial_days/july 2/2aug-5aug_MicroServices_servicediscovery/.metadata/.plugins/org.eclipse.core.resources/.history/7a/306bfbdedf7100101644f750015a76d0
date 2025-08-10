@@ -1,7 +1,0 @@
-package com.wipro.orderms.dto;
-
-@Data
-public class Order {
-	Order order;
-    Payment payment;
-}

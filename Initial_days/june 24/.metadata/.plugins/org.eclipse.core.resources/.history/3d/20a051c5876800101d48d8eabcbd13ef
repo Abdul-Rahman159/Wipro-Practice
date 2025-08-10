@@ -1,0 +1,22 @@
+package com.wipro.datetimedemo;
+import java.time.LocalDate;
+
+public class LeapYearChecker {
+
+    public static void main(String[] args) {
+        // Hardcoded date
+        int year = 2024;
+        int month = 2;
+        int day = 29;
+
+        // Create LocalDate object
+        LocalDate date = LocalDate.of(year, month, day);
+
+        // Check if it's a leap year
+        if (date.isLeapYear()) {
+            System.out.println(year + " is a leap year.");
+        } else {
+            System.out.println(year + " is not a leap year.");
+        }
+    }
+}

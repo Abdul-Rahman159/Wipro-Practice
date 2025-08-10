@@ -1,0 +1,5 @@
+package com.wipro.restdemo.dto;
+
+public class Mobile {
+
+}

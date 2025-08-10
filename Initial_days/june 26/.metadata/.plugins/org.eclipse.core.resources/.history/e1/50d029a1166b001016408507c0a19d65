@@ -1,0 +1,10 @@
+/**
+ * 
+ */
+/**
+ * 
+ */
+module Day6_Java_code {
+	exports com.wipro.junitest;
+    requires org.junit.jupiter.api;
+}

@@ -1,0 +1,32 @@
+package com.wipro.datetimedemo;
+import java.time.LocalDate;
+import java.util.Scanner;
+
+public class LeapYearChecker {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Taking date input
+        System.out.print("Enter year: ");
+        int year = sc.nextInt();
+
+        System.out.print("Enter month (1-12): ");
+        int month = sc.nextInt();
+
+        System.out.print("Enter day (1-31): ");
+        int day = sc.nextInt();
+
+        try {
+            LocalDate date = LocalDate.of(year, month, day);
+
+            if (date.isLeapYear()) {
+                System.out.println("The year " + year + " is a leap year.");
+            } else {
+                System.out.println("The year " + year + " is not a leap year.");
+            }
+        } catch (Exception e) {
+            System.out.println("Invalid date entered!");
+        }
+    }
+}

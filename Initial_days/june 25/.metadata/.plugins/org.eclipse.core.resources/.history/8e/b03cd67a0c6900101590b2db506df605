@@ -1,0 +1,25 @@
+package com.wipro.anonymous;
+
+public class AnonymousInnerDemo {
+
+	public static void main(String[] args) {
+		BankOps savingsAccount = new BankOps () {
+
+			@Override
+			public void deposit(double amount) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void deposit() {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		};
+		savingsAccount(10000);
+
+	}
+
+}

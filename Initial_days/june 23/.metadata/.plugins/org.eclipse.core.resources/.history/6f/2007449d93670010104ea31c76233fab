@@ -1,0 +1,16 @@
+package com.wipro.oop;
+
+public class Converter {
+	public int convert(int a, int b) {
+		return System.out.println("a and b converted " + "a= " + a + "b= " + b);
+		
+	}
+	
+	public int convert(int a, int b, int c) {
+		return a+b+c;
+	}
+	
+	public double convert(double a) {
+		return a;
+	}
+}

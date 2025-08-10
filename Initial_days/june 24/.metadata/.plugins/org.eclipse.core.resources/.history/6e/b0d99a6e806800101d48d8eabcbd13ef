@@ -1,0 +1,21 @@
+package com.wipro.datetimedemo;
+
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.format.DateTimeFormatter;
+
+public class DateTimeDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		LocalDate dt5 = LocalDate.of(2023, Month.NOVEMBER, 1);
+
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		System.out.println(dt5.format(formatter));
+		
+		
+	}
+
+}

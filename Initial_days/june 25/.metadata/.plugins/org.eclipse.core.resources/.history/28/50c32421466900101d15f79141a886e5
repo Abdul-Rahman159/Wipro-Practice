@@ -1,0 +1,9 @@
+package com.wipro.stream;
+
+public class FoodItemclass {
+	String FoodName; 
+	String Foodtype;
+    String Cuisine; 
+	double price;
+
+}

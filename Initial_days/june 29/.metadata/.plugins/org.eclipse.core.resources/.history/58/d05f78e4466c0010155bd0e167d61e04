@@ -1,0 +1,27 @@
+package com.wipro.hibernate.util;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import com.wipro.hibernate.entity.Pan;
+
+public class HibernateUtil {
+    private static SessionFactory sessionFactory;
+
+    static {
+        try {
+        	System.out.println("Is Pan annotated as entity: " + Pan.class.isAnnotationPresent(javax.persistence.Entity.class));
+
+            sessionFactory = new Configuration()
+            	.configure("hibernate.cfg.xml")
+            	.addAnnotatedClass(com.wipro.hibernate.entity.Pan.class)
+                .buildSessionFactory();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public static SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
+}

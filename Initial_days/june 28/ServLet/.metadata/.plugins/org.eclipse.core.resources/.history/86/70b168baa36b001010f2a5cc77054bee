@@ -1,0 +1,5 @@
+package com.wipro.servdemo;
+
+public class MyHttpServlet extends HttpServlet {
+
+}

@@ -1,0 +1,11 @@
+package com.wipro.thymeleafdemo.controller;
+
+@Controller
+public class HelloController {
+	@GetMapping("/hello")
+	String showWelcome(Model m)
+	{
+		m.addAttribute("name", "Jayanta");
+		return "index";		
+	}
+}

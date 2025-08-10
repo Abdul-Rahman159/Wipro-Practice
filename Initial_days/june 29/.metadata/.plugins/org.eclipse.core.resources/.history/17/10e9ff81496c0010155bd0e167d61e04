@@ -1,0 +1,32 @@
+package com.wipro.hibernatedemo;
+
+import java.lang.module.Configuration;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.wipro.hibernate.entity.Pan;
+import com.wipro.hibernate.util.HibernateUtil;
+
+public class App {
+	public static void main(String[] args) {
+		Configuration configuration = new Configuration();
+        configuration.configure("hibernate.cfg.xml");
+        configuration.addAnnotatedClass(Pan.class);
+
+        SessionFactory sessionFactory = configuration.buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        Pan pan = new Pan();
+        pan.setId(1);
+        pan.setPanholderName("John Doe");
+        pan.setPanNumber("ABCDE1234F");
+
+        session.save(pan); // this should now work
+
+        transaction.commit();
+        session.close();
+    }
+}

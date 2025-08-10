@@ -1,0 +1,12 @@
+package com.wipro.stream;
+
+public class StreamEx14 {
+	public static void main(String[] args) {
+		FoodItemclass f1 = new FoodItemclass("Noodles", "Veg", "Chinese", 60 );
+		FoodItemclass f2 = new FoodItemclass("mango sticky rice", "Veg", "Thai", 160 );
+		FoodItemclass f3 = new FoodItemclass("Pizza", "Veg", "Continental", 260 );
+		FoodItemclass f4 = new FoodItemclass("Manchurian", "Veg", "Chinese", 80 );
+		FoodItemclass f5 = new FoodItemclass("Curry", "Veg", "Thai", 160 );
+		FoodItemclass f6 = new FoodItemclass("Fried Rice", "Veg", "Chinese",100 );
+	}
+}

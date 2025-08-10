@@ -1,0 +1,23 @@
+package com.wipro.anonymous;
+
+import java.util.function.Predicate;
+
+public class PalindromeEx4 {
+
+	public static void main(String[] args) {
+		 Predicate<String> isPalindrome = str -> {
+	            String reversed = new StringBuilder(str).reverse().toString();
+	            return str.equalsIgnoreCase(reversed);
+	        };
+
+	        // Test strings
+	        String input1 = "madam";
+	        String input2 = "hello";
+
+	        // Check and print results
+	        System.out.println(input1 + " is palindrome? " + isPalindrome.test(input1));
+	        System.out.println(input2 + " is palindrome? " + isPalindrome.test(input2));
+
+	}
+
+}

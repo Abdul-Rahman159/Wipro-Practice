@@ -1,0 +1,14 @@
+package com.wipro.methodref;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class MethodRefEx5 {
+    public static void main(String[] args) {
+        List<String> names = Arrays.asList("John", "Alice", "Bob", "David");
+
+        names.stream()
+             .sorted(String::compareTo)
+             .forEach(System.out::println);
+    }
+}

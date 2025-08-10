@@ -1,0 +1,5 @@
+package com.wipro.restdemo.controller;
+
+public class MobileController {
+
+}

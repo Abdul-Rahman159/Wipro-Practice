@@ -1,0 +1,13 @@
+package com.wipro.solid;
+
+public class PaymentProcessor {
+	Payment paymentMethod; // depends on abstraction
+
+    public PaymentProcessor(Payment paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public void makePayment(double amount) {
+        paymentMethod.pay(amount);
+    }
+}

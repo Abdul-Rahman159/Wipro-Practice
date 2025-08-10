@@ -1,0 +1,25 @@
+package com.wipro.aopvac.aspect;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+
+@Aspect
+public class AirTravelAspect {
+
+    @Before("execution(* AirTravelProcess.checkIn(..))")
+    public void showPhotoId() {
+        System.out.println("[Advice] Please show your Photo ID before check-in.");
+    }
+
+    @Before("execution(* AirTravelProcess.doSecurityCheck(..)) || execution(* AirTravelProcess.doBoarding(..))")
+    public void showBoardingPass() {
+        System.out.println("[Advice] Please show your Boarding Pass.");
+    }
+
+    @AfterThrowing(pointcut = "execution(* AirTravelProcess.checkIn(..))", throwing = "ex")
+    public void handleNoSeatException(JoinPoint joinPoint, Throwable ex) {
+        System.out.println("----No Seat Exceeption-----");
+    }
+}

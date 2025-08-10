@@ -1,0 +1,27 @@
+package com.example.hibernatedemo;
+
+import org.hibernate.Transaction;
+
+import com.wipro.hibernate.entity.Pan;
+import com.wipro.hibernate.util.HibernateUtil;
+
+public class App {
+    public static void main(String[] args) {
+        // Create a PAN object
+        Pan pan = new Pan();
+        pan.setId(1);
+        pan.setPanholderName("Amit Sharma");
+        pan.setPanNumber("ABCDE1234F");
+
+        // Get session and save
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction tx = session.beginTransaction();
+
+        session.save(pan);
+
+        tx.commit();
+        session.close();
+
+        System.out.println("PAN data saved successfully!");
+    }
+}

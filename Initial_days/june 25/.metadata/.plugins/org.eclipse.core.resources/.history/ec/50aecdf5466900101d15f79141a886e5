@@ -1,0 +1,7 @@
+package com.wipro.stream;
+
+public class StreamEx14 {
+	public static void main(String[] args) {
+		FoodItemclass f1 = new FoodItemclass("Noodles", "Veg", "Chinese", 60 );
+	}
+}

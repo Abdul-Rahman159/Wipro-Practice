@@ -1,0 +1,7 @@
+package com.wipro.springdemo.beans;
+
+@Component
+@Scope("prototype")
+public class Mobile {
+
+}

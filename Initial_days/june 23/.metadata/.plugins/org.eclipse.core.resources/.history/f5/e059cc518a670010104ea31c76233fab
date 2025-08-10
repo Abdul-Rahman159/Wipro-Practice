@@ -1,0 +1,11 @@
+package com.wipro.oop;
+
+public class Bank {
+	String accountNumber;
+	String ifscCode;
+	String branchAddress;
+	String accountType;
+	
+	public abstract double withdraw(String accountNumber, double amount);
+	public abstract double deposit(String accountNumber, double amount);
+}

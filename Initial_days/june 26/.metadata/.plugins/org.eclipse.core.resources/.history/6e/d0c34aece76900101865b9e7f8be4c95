@@ -1,0 +1,11 @@
+package com.wipro.thread;
+
+public class CounterThread extends Thread {
+	CounterEx3 counter;
+	
+	public CounterThread(CounterEx3 counter) {
+		this.counter = counter;
+	};
+	
+	
+}

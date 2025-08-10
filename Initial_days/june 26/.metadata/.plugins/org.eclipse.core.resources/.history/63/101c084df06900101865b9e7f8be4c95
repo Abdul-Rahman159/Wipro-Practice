@@ -1,0 +1,11 @@
+package com.wipro.thread;
+
+import java.util.concurrent.ExecutorService;
+
+public class ExecutableEx4 {
+
+	public static void main(String[] args) {
+		ExecutorService executor = Exxecutors.newFixedThreadPool(5);
+	}
+
+}

@@ -1,0 +1,27 @@
+package com.wipro.aopvac.aspect;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
+
+@Aspect
+@Component
+public class AirTravelAspect {
+
+    @Before("execution(* com.wipro.aopvac.service..checkIn(..))")
+    public void showPhotoId(JoinPoint jp) {
+        System.out.println("show your Photo ID before check-in.");
+    }
+
+    @Before("execution(* com.wipro.aopvac.service..*(..))")
+    public void showBoardingPass(JoinPoint jp) {
+        System.out.println("show your Boarding Pass.");
+    }
+
+    @AfterThrowing(pointcut = "execution(* com.wipro.aopvac.service..checkIn(..)", throwing = "ex")
+    public void handleNoSeatException(JoinPoint jp, Throwable ex) {
+        System.out.println("----Connect to manager-----");
+    }
+}

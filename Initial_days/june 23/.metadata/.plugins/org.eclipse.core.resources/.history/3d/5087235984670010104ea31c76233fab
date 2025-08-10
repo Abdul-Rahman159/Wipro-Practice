@@ -1,0 +1,19 @@
+package com.wipro.oop.test;
+
+import com.wipro.oop.Citi;
+import com.wipro.oop.HDFC;
+
+public class BankTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		HDFC hdfc = new HDFC();
+		hdfc.deposit(2000, "1234567891");
+		
+		Citi citi = new Citi();
+		citi.deposit(2000, "1234567891");
+		
+	}
+
+}

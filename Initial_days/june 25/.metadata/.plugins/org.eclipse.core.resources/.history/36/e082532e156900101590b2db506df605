@@ -1,0 +1,19 @@
+package com.wipro.anonymous;
+
+import java.util.function.Predicate;
+
+public class PalindromeEx4 {
+
+	public static void main(String[] args) {
+			 Predicate<String> palindrome = str -> {
+		            String reversed = new StringBuilder(str).reverse().toString();
+		            return str.equalsIgnoreCase(reversed);
+		        };
+
+	        String p = "refer";
+
+	        System.out.println(p + " is palindrome? " + palindrome.test(p));
+
+	}
+
+}

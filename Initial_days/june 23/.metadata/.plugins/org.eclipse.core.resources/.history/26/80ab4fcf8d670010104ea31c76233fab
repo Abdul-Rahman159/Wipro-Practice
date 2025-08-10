@@ -1,0 +1,20 @@
+package com.wipro.oop.test;
+
+import com.wipro.oop.Bird;
+import com.wipro.oop.Dog;
+import com.wipro.oop.Human;
+
+public class AnimalTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Human h = new Human("Alice", 25);
+        Bird b = new Bird("Tweety", 2);
+        Dog d = new Dog("Bruno", 4);
+
+        h.makeSound();
+        b.makeSound();
+        d.makeSound();
+	}
+
+}
