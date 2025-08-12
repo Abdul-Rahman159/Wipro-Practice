@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexbox Layout</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f8f8f8;
+        margin: 0;
+        padding: 20px;
+    }
+    .container {
+        display: flex;
+        gap: 20px;
+    }
+    .card {
+        background: white;
+        border-radius: 8px;
+        padding: 15px;
+        flex: 1;
+    }
+    .card h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .grid-item {
+        flex: 1 1 calc(50% - 10px);
+        text-align: center;
+    }
+    .grid-item img {
+        width: 100%;
+        border-radius: 4px;
+    }
+    .grid-item p {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+    a {
+        color: #007185;
+        text-decoration: none;
+        font-size: 14px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h3>Pick up where you left off</h3>
+        <div class="grid">
+            <div class="grid-item">
+                <img src="https://tse2.mm.bing.net/th/id/OIP.qUKi1vtGrBKW8vuQWM8sUwHaHa?pid=Api&P=0&h=220" alt="">
+                <p>XTRIM X-Macho Leather</p>
+            </div>
+            <div class="grid-item">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2022/9/EV/HV/YA/115191399/honeywell-electrical-rubber-hand-gloves-1000x1000.jpg" alt="">
+                <p>Kobo WTG-05 Leather</p>
+            </div>
+            <div class="grid-item">
+                <img src="https://images.homedepot-static.com/productImages/9ad040be-60d5-4ca8-aed3-c564679fe08b/svn/multi-premium-defense-work-gloves-7007-06-64_1000.jpg" alt="">
+                <p>19.ten Leather Gym GL</p>
+            </div>
+            <div class="grid-item">
+                <img src="https://tse2.mm.bing.net/th/id/OIP.ze01PgZkjdu4yJcW9fo7uAHaHa?pid=Api&P=0&h=220" alt="">
+                <p>BROGBUS Neoprene W</p>
+            </div>
+        </div>
+        <a href="#">See more</a>
+    </div>
+
+    <!-- Right Card -->
+    <div class="card">
+        <h3>Keep shopping for</h3>
+        <div class="grid">
+            <div class="grid-item">
+                <img src="https://img.freepik.com/premium-photo/collection-electronic-devices-including-laptop-phone-ipod_1065421-12202.jpg" alt="">
+                <p>Smartphones & basic</p>
+                <small>2 viewed</small>
+            </div>
+            <div class="grid-item">
+                <img src="https://www.pngitem.com/pimgs/m/247-2474633_transparent-electronics-items-png-png-download.png" alt="">
+                <p>Women's kurtas & ku</p>
+                <small>2 viewed</small>
+            </div>
+            <div class="grid-item">
+                <img src="http://www.pngall.com/wp-content/uploads/1/Electronic-High-Quality-PNG.png" alt="">
+                <p>Men's beard & moust</p>
+                <small>1 viewed</small>
+            </div>
+            <div class="grid-item">
+                <img src="https://www.pngall.com/wp-content/uploads/1/Electronic.png" alt="">
+                <p>Induction cooktops</p>
+                <small>5 viewed</small>
+            </div>
+        </div>
+        <a href="#">View your browsing history</a>
+    </div>
+</div>
+
+</body>
+</html>

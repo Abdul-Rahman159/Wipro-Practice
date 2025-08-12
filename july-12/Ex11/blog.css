@@ -1,0 +1,188 @@
+/* Base Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: #fdfdfd;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #0077cc;
+}
+
+h1, h2, h3, h4 {
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Header */
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  padding: 20px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  font-weight: 500;
+}
+
+/* Hero Section */
+.hero {
+  background-image: url('https://wallpapercave.com/wp/VeUtzwn.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* dark overlay for readability */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.meta {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Layout Container */
+.container {
+  display: flex;
+  gap: 30px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Main Content */
+.main-content {
+  flex: 2;
+}
+
+.main-content img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button {
+  background-color: #0077cc;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #005fa3;
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 1;
+}
+
+.author-box {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.author-box img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 5px;
+  font-size: 14px;
+}
+
+.recent-posts ul {
+  list-style: none;
+  padding: 0;
+}
+
+.recent-posts li {
+  margin-bottom: 10px;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-social a {
+  margin: 0 10px;
+  color: #ccc;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .main-content img,
+  .author-box img {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero {
+    padding: 40px 20px;
+  }
+}
