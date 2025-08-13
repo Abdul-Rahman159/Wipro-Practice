@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Var, Let, Const Scope Example</title>
+</head>
+<body>
+
+<script>
+     
+    var x = 10;
+    if (true) {
+        var x = 20;  
+        console.log("Inside if with var:", x); // 20
+    }
+    console.log("Outside if with var:", x); // 20
+
+     
+    let y = 30;
+    if (true) {
+        let y = 40;  
+        console.log("Inside if with let:", y); // 40
+    }
+    console.log("Outside if with let:", y); // 30
+
+     
+    const z = 50;
+    if (true) {
+        const z = 60;  
+        console.log("Inside if with const:", z); // 60
+    }
+    console.log("Outside if with const:", z); // 50
+
+     
+</script>
+
+</body>
+</html>

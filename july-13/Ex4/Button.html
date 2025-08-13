@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Counter</title>
+</head>
+<body>
+
+<input type="text" id="myInput" maxlength="50" placeholder="Type something here">
+<br>
+<label id="charCount">50 characters remaining</label>
+
+<script>
+    let input = document.getElementById("myInput");
+    let label = document.getElementById("charCount");
+
+    input.addEventListener("input", function () {
+        let remaining = 50 - input.value.length;
+        label.textContent = remaining + " characters remaining";
+    });
+</script>
+
+</body>
+</html>

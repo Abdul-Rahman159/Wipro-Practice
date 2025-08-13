@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Total Salary of Managers</title>
+</head>
+<body>
+    <h1>Manager salary</h1>
+
+    <script>
+        let employees = [
+            { name: "Rahul", role: "Manager", empId: 101, salary: 80000 },
+            { name: "Priya", role: "Developer", empId: 102, salary: 60000 },
+            { name: "Amit", role: "Manager", empId: 103, salary: 90000 },
+            { name: "Suresh", role: "QA", empId: 104, salary: 55000 },
+            { name: "Neha", role: "Manager", empId: 105, salary: 85000 }
+        ];
+
+       let totalManagerSalary = employees.reduce((total, emp) => {
+    return emp.role === "Manager" ? total + emp.salary : total;
+}, 0);
+
+console.log("Total salary drawn by all Managers:", totalManagerSalary);
+    </script>
+</body>
+</html>

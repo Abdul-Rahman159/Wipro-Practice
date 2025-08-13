@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eligible Voters</title>
+</head>
+<body>
+    <h1>Eligible Voters List</h1>
+    <ul id="voterList"></ul>
+
+    <script>
+        let persons = [
+            { name: "Rahul", age: 17, city: "Delhi" },
+            { name: "Priya", age: 22, city: "Mumbai" },
+            { name: "Amit", age: 19, city: "Pune" },
+            { name: "Suresh", age: 15, city: "Chennai" },
+            { name: "Neha", age: 30, city: "Kolkata" }
+        ];
+
+        let eligibleVoters = persons.filter(person => person.age >= 18);
+
+         console.log("Eligible voters:");
+        eligibleVoters.forEach(person => {
+            console.log(`${person.name} (${person.age}) - ${person.city}`);
+        });
+    </script>
+</body>
+</html>
