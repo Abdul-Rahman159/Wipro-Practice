@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Separate First</title>
+</head>
+<body>
+    <h1>Separate First and Rest</h1>
+
+    <script>
+        function separateFirstRest(first, ...rest) {
+            return {
+                first: first,
+                rest: rest
+            };
+        }
+
+        console.log(separateFirstRest(1, 2, 3, 4, 5));
+         
+        console.log(separateFirstRest("apple", "banana", "cherry"));
+    </script>
+</body>
+</html>

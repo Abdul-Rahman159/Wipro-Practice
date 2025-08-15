@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Destructuring</title>
+</head>
+<body>
+    <h1>Movie Object Destructuring</h1>
+
+    <script>
+        const movie = {
+            movieName: "Inception",
+            movieLanguage: "English",
+            imdbRating: 8.8
+        };
+
+        // destructuring
+        const { movieName, movieLanguage, imdbRating } = movie;
+
+        console.log("Movie Name:", movieName);
+        console.log("Language:", movieLanguage);
+        console.log("IMDB Rating:", imdbRating);
+    </script>
+</body>
+</html>

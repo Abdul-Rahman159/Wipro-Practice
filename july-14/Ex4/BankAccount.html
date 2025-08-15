@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BankAccount Class</title>
+</head>
+<body>
+    <h1>BankAccount Class</h1>
+
+    <script>
+        class BankAccount {
+            constructor(accountNumber, balance) {
+                this.accountNumber = accountNumber;
+                this.balance = balance;
+            }
+
+            deposit(amount) {
+                if (amount > 0) {
+                    this.balance += amount;
+                    console.log(`Deposited ₹${amount}. New Balance: ₹${this.balance}`);
+                } else {
+                    console.log("Deposit amount must be greater than 0.");
+                }
+            }
+
+            withdraw(amount) {
+                if (amount > 0) {
+                    if (this.balance >= amount) {
+                        this.balance -= amount;
+                        console.log(`Withdrew ₹${amount}. Remaining Balance: ₹${this.balance}`);
+                    } else {
+                        console.log("Insufficient balance.");
+                    }
+                } else {
+                    console.log("Withdrawal amount must be greater than 0.");
+                }
+            }
+        }
+
+        const account = new BankAccount("ACC12345", 5000);
+
+        account.deposit(2000);    
+        account.withdraw(1000);   
+        account.withdraw(8000);   
+    </script>
+</body>
+</html>

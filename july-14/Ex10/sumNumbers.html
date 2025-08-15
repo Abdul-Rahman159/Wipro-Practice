@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rest Operator</title>
+</head>
+<body>
+    <h1>Rest Operato</h1>
+
+    <script>
+        function sumNumbers(...numbers) {
+            return numbers.reduce((sum, num) => sum + num, 0);
+        }
+
+        console.log(sumNumbers(1, 2, 3));       
+        console.log(sumNumbers(10, 20, 30, 40));  
+        console.log(sumNumbers(5));              
+    </script>
+</body>
+</html>
