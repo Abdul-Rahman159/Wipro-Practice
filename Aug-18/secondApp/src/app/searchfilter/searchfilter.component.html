@@ -1,0 +1,11 @@
+<h3>Search Filter (Prefix Match)</h3>
+
+<input type="text" [(ngModel)]="searchText" placeholder="Type to search..." />
+
+<br><br>
+
+<select size="6" style="width:200px;">
+  @for (name of filteredNames; track $index) {
+    <option>{{ name }}</option>
+  }
+</select>

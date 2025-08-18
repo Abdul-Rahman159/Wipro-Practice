@@ -1,0 +1,10 @@
+<h3>Checkbox Toggle Example</h3>
+
+<label>
+  <input type="checkbox" (change)="toggleMessage($event)" />
+  Show Message
+</label>
+
+<p *ngIf="showMessage" class="mt-2 text-success">
+  ✅ Hello, this is the hidden message!
+</p>
