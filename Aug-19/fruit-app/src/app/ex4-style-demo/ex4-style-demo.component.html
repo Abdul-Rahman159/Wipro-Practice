@@ -1,0 +1,13 @@
+<h2>ngClass + ngStyle Example</h2>
+
+<p [ngClass]="getNgClass()">
+  This text uses CSS classes from getNgClass().
+</p>
+
+<p [ngStyle]="getNgStyle()">
+  This text uses inline styles from getNgStyle().
+</p>
+
+<p [ngClass]="getNgClass()" [ngStyle]="getNgStyle()">
+  This text uses both ngClass and ngStyle together.
+</p>

@@ -1,0 +1,51 @@
+<h2>Task Manager</h2>
+
+<!-- Task Input Form -->
+<form (ngSubmit)="addTask()" #taskForm="ngForm" style="margin-bottom: 20px;">
+  <label for="description">Description: </label>
+  <input 
+    type="text" 
+    id="description" 
+    name="description" 
+    [(ngModel)]="newTask.description" 
+    required 
+  />
+
+  <label for="category">Category: </label>
+  <select 
+    id="category" 
+    name="category" 
+    [(ngModel)]="newTask.category" 
+    required
+  >
+    <option value="">Select</option>
+    <option value="Work">Work</option>
+    <option value="Study">Study</option>
+    <option value="Exercise">Exercise</option>
+    <option value="Personal">Personal</option>
+  </select>
+
+  <button type="submit" [disabled]="!taskForm.form.valid">Add Task</button>
+</form>
+
+<!-- Task Table -->
+<table border="1" cellspacing="0" cellpadding="8" style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of tasks">
+      <td>{{ task.id }}</td>
+      <td>{{ task.description }}</td>
+      <td>{{ task.category }}</td>
+      <td>
+        <button (click)="removeTask(task.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

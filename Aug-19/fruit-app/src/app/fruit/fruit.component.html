@@ -1,0 +1,18 @@
+<!-- <div class="card" style="width: 18rem; margin: 10px;">
+  <img [src]="image" class="card-img-top" alt="{{name}}" />
+  <div class="card-body">
+    <h5 class="card-title">{{name}}</h5>
+    <p class="card-text">{{description}}</p>
+  </div>
+</div> -->
+
+<div class="card" style="width:200px; margin:10px;">
+  <img [src]="fruit.image" class="card-img-top" alt="{{fruit.name}}">
+  <div class="card-body">
+    <h5 class="card-title">{{ fruit.name }}</h5>
+    <p class="card-text">{{ fruit.description }}</p>
+    <button class="btn btn-danger btn-sm" (click)="onRemove()">Remove</button>
+  </div>
+</div>
+
+

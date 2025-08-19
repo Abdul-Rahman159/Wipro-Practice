@@ -1,0 +1,16 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Fruit List</h2>
+  <div class="row">
+    @for (fruit of fruits; track $index) {
+      <div class="col-md-3 mb-4">
+        <div class="card">
+          <img [src]="fruit.image" class="card-img-top" [alt]="fruit.name">
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ fruit.name }}</h5>
+            <p class="card-text">{{ fruit.description }}</p>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

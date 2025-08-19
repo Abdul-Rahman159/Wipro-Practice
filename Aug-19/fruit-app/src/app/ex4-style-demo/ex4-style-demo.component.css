@@ -1,0 +1,9 @@
+.redText {
+  color: red;
+  font-weight: bold;
+}
+
+.bigFont {
+  font-size: 22px;
+  text-transform: uppercase;
+}
