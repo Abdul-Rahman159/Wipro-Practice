@@ -1,0 +1,14 @@
+<!-- <h2>Uppercase Pipe Demo</h2> -->
+
+<!-- Input box -->
+<!-- <input type="text" [(ngModel)]="inputText" placeholder="Type something..." /> -->
+
+<!-- Display immediately in CAPITALS -->
+<!-- <p>Transformed: {{ inputText | uppercase }}</p> -->
+
+<h2>Calendar Control Example</h2>
+
+
+<input type="date" [(ngModel)]="selectedDate" />
+
+<p *ngIf="selectedDate">Selected Date: {{ selectedDate | date:'short' }}</p>
