@@ -1,0 +1,18 @@
+<form (ngSubmit)="save()">
+  <div>
+    <label for="name">Name:</label>
+    <input id="name" name="name" [(ngModel)]="product.name" type="text" />
+  </div>
+
+  <div>
+    <label for="category">Category:</label>
+    <input id="category" name="category" [(ngModel)]="product.category" type="text" />
+  </div>
+
+  <div>
+    <label for="price">Price:</label>
+    <input id="price" name="price" [(ngModel)]="product.price" type="number" />
+  </div>
+
+  <button type="submit">Save</button>
+</form>

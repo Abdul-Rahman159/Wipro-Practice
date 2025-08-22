@@ -1,0 +1,2 @@
+form { display: grid; gap: 8px; max-width: 320px; }
+label { display: inline-block; width: 90px; }
