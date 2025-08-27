@@ -1,0 +1,51 @@
+<form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+
+  <!-- Name -->
+  <div>
+    <input type="text" formControlName="name" placeholder="Enter Name" />
+    @if((regForm.controls['name'].invalid) && (regForm.controls['name'].touched || regForm.controls['name'].dirty)) {
+      @if(regForm.controls['name'].errors?.['required']) {
+        <span>Name is Required</span>
+      }
+    }
+  </div>
+
+  <!-- Email -->
+  <div>
+    <input type="text" formControlName="email" placeholder="Enter Email" />
+    @if((regForm.controls['email'].invalid) && (regForm.controls['email'].touched || regForm.controls['email'].dirty)) {
+      @if(regForm.controls['email'].errors?.['required']) {
+        <span>Email is Required</span>
+      }
+      @if(regForm.controls['email'].errors?.['email']) {
+        <span>Email is not in correct format</span>
+      }
+    }
+  </div>
+
+  <!-- DOB -->
+  <div>
+    <input type="date" formControlName="dob" />
+    @if((regForm.controls['dob'].invalid) && (regForm.controls['dob'].touched || regForm.controls['dob'].dirty)) {
+      @if(regForm.controls['dob'].errors?.['required']) {
+        <span>Date of Birth is Required</span>
+      }
+    }
+  </div>
+
+  <!-- Subject -->
+  <div>
+    <input type="text" formControlName="subject" placeholder="Enter Subject" />
+    @if((regForm.controls['subject'].invalid) && (regForm.controls['subject'].touched || regForm.controls['subject'].dirty)) {
+      @if(regForm.controls['subject'].errors?.['required']) {
+        <span>Subject is Required</span>
+      }
+    }
+  </div>
+
+  <!-- Submit -->
+  <div>
+    <button type="submit" [disabled]="regForm.invalid">Register</button>
+  </div>
+
+</form>

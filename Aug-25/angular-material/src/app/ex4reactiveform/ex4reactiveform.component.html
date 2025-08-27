@@ -1,0 +1,27 @@
+<form [formGroup]="fg" (ngSubmit)="onSubmit()">
+  <div>
+    <input type="text" formControlName="name" placeholder="Name" />
+  </div>
+
+  <div>
+    <input type="email" formControlName="email" placeholder="Email" />
+  </div>
+
+  <div>
+    <input type="date" formControlName="dob" />
+  </div>
+
+  <div>
+    <select formControlName="subject">
+      <option value="">Select Subject</option>
+      <option value="Computer Science">Computer Science</option>
+      <option value="Mathematics">Mathematics</option>
+      <option value="Physics">Physics</option>
+      <option value="Chemistry">Chemistry</option>
+    </select>
+  </div>
+
+  <div>
+    <button type="submit">Register</button>
+  </div>
+</form>
