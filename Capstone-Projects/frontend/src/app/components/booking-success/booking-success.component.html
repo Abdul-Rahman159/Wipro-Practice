@@ -1,0 +1,46 @@
+<div class="container mt-4" *ngIf="booking; else noBooking">
+  <div class="alert alert-success text-center">
+    🎉 Payment Successful! Your booking is confirmed.
+  </div>
+
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <h4 class="card-title mb-3">Booking Details</h4>
+      <p><b>Booking ID:</b> {{booking.id}}</p>
+      <p><b>Passenger:</b> {{booking.passengerName}} ({{booking.gender}}, {{booking.age}} yrs)</p>
+      <p><b>Email:</b> {{booking.email}} | <b>Phone:</b> {{booking.phone}}</p>
+      <p><b>Status:</b> <span class="badge bg-success">{{booking.status}}</span></p>
+    </div>
+  </div>
+
+  <div class="card shadow-sm mb-4" *ngIf="flight">
+  <div class="card-body">
+    <h4 class="card-title mb-3">Flight Details</h4>
+    <p><b>Flight No:</b> {{flight.flightNumber}}</p>
+    <p><b>From:</b> {{flight.source}} | <b>To:</b> {{flight.destination}}</p>
+    <p><b>Departure:</b> {{flight.departureTime}}</p>
+    <p><b>Arrival:</b> {{flight.arrivalTime}}</p>
+    <p><b>Duration:</b> {{flight.duration}}</p>
+    <p><b>Price:</b> ₹{{flight.price}}</p>
+  </div>
+</div>
+
+
+  <div class="card shadow-sm mb-4" *ngIf="payment">
+    <div class="card-body">
+      <h4 class="card-title mb-3">Payment Details</h4>
+      <p><b>Transaction ID:</b> {{payment.transactionId}}</p>
+      <p><b>Card Holder:</b> {{payment.cardHolderName}}</p>
+      <p><b>Status:</b> <span class="badge bg-success">{{payment.status}}</span></p>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <button class="btn btn-primary me-3" (click)="downloadTicket()">Download Ticket (PDF)</button>
+    <a routerLink="/" class="btn btn-secondary">Back to Home</a>
+  </div>
+</div>
+
+<ng-template #noBooking>
+  <div class="alert alert-warning">No booking data found in navigation state. Try again.</div>
+</ng-template>

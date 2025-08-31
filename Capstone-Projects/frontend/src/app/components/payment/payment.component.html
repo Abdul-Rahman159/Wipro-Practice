@@ -1,0 +1,55 @@
+<div class="payment-container d-flex justify-content-center align-items-center">
+  <div class="payment-card shadow-lg">
+    
+    <!-- Header -->
+    <div class="payment-header text-center">
+      <img src="https://img.icons8.com/fluency/96/credit-card-front.png" alt="Card Icon" class="header-icon" />
+      <h3>Secure Payment</h3>
+      <p class="text-muted">Enter your card details to confirm your booking</p>
+    </div>
+
+    <!-- Price -->
+    <div class="price-box d-flex justify-content-between align-items-center">
+      <span class="fw-bold">Total Amount</span>
+      <span class="amount">{{ totalPrice | currency:'INR' }}</span>
+    </div>
+
+    <!-- Card Holder -->
+    <div class="form-group">
+      <label>Card Holder Name</label>
+      <input type="text" class="form-control" [(ngModel)]="cardHolder" placeholder="Full Name">
+    </div>
+
+    <!-- Card Number -->
+    <div class="form-group">
+      <label>Card Number</label>
+      <div class="input-with-icon">
+        <input type="text" maxlength="16" class="form-control" [(ngModel)]="cardNumber" placeholder="0000 0000 0000 0000">
+        <img src="https://img.icons8.com/color/48/visa.png" alt="Card Icon" class="card-icon"/>
+      </div>
+    </div>
+
+    <!-- Expiry + CVV -->
+    <div class="row">
+      <div class="col-md-6 form-group">
+        <label>Expiry Date</label>
+        <input type="month" class="form-control" [(ngModel)]="expiry">
+      </div>
+      <div class="col-md-6 form-group">
+        <label>CVV</label>
+        <input type="password" maxlength="3" class="form-control" [(ngModel)]="cvv" placeholder="123">
+      </div>
+    </div>
+
+    <!-- Pay Button -->
+    <button class="btn btn-primary w-100 pay-btn" (click)="pay()">
+      Pay ₹{{ totalPrice | currency:'INR' }}
+    </button>
+
+    <!-- Security Info -->
+    <div class="secure-info text-center mt-3">
+      <img src="https://img.icons8.com/ios-filled/24/lock-2.png" class="lock-icon"/> 
+      <small>Secured by SSL encryption</small>
+    </div>
+  </div>
+</div>

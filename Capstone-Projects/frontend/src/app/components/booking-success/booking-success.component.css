@@ -1,0 +1,10 @@
+.card {
+  border-radius: 10px;
+}
+.card-title {
+  color: #0d6efd;
+}
+.alert-success {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
