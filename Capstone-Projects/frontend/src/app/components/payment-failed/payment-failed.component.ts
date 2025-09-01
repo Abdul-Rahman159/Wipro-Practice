@@ -12,7 +12,7 @@ import { Router  } from '@angular/router';
         <div class="failed-content">
           <div class="status-card">
             
-            <!-- Status Icon -->
+            <!-- Status Icon --> 
             <div class="status-icon error">
               <div class="icon-circle">✕</div>
             </div>
