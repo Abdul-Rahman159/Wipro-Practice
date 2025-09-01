@@ -1,0 +1,173 @@
+<!-- Search Summary Header -->
+<div class="search-header">
+  <div class="container">
+    <div class="search-summary">
+      <div class="route-display">
+        <span class="route-city">{{params?.source || 'Source'}}</span>
+        <span class="route-arrow">→</span>
+        <span class="route-city">{{params?.destination || 'Destination'}}</span>
+      </div>
+      <div class="search-info">
+        <span class="search-date">{{params?.date | date:'EEE, MMM d'}}</span>
+        <span class="results-count" *ngIf="!loading">
+          {{filteredFlights.length}} flights
+        </span>
+      </div>
+    </div>
+    <button class="modify-btn" (click)="goBack()">
+      Modify Search
+    </button>
+  </div>
+</div>
+
+<div class="main-content">
+  <div class="container">
+    <div class="content-grid">
+      
+      <!-- Filters Sidebar -->
+      <div class="filters-sidebar">
+        <div class="filters-card">
+          <div class="filters-header">
+            <h6>Filter Results</h6>
+            <button class="clear-filters" (click)="clearFilters()" *ngIf="hasActiveFilters()">
+              Clear all
+            </button>
+          </div>
+
+          <!-- Airlines Filter -->
+          <div class="filter-group" *ngIf="allAirlines.length > 0">
+            <h6 class="filter-title">Airlines</h6>
+            <div class="filter-options">
+              <label *ngFor="let airline of allAirlines" class="checkbox-label">
+                <input type="checkbox"
+                       [value]="airline"
+                       (change)="toggleAirline($event)"
+                       [checked]="selectedAirlines.includes(airline)">
+                <span class="checkbox-text">
+                  {{airline}}
+                  <span class="flight-count">({{getAirlineFlightCount(airline)}})</span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Sort Options -->
+          <div class="filter-group">
+            <h6 class="filter-title">Sort by</h6>
+            <div class="filter-options">
+              <label class="radio-label">
+                <input type="radio" name="sort" value="price-low" (change)="setSortFilter('price-low')" [checked]="sortFilter === 'price-low'">
+                <span class="radio-text">Price (Low to High)</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="sort" value="price-high" (change)="setSortFilter('price-high')" [checked]="sortFilter === 'price-high'">
+                <span class="radio-text">Price (High to Low)</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="sort" value="departure" (change)="setSortFilter('departure')" [checked]="sortFilter === 'departure'">
+                <span class="radio-text">Departure Time</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Time Filter -->
+          <div class="filter-group">
+            <h6 class="filter-title">Departure Time</h6>
+            <div class="filter-options">
+              <label class="checkbox-label">
+                <input type="checkbox" (change)="toggleTimeFilter('morning')" [checked]="timeFilters.includes('morning')">
+                <span class="checkbox-text">Morning (6AM - 12PM)</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" (change)="toggleTimeFilter('afternoon')" [checked]="timeFilters.includes('afternoon')">
+                <span class="checkbox-text">Afternoon (12PM - 6PM)</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" (change)="toggleTimeFilter('evening')" [checked]="timeFilters.includes('evening')">
+                <span class="checkbox-text">Evening (6PM - 12AM)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flight Results -->
+      <div class="results-main">
+        
+        <!-- Loading State -->
+        <div *ngIf="loading" class="loading-state">
+          <div class="loading-spinner"></div>
+          <p>Searching flights...</p>
+        </div>
+
+        <!-- No Results -->
+        <div *ngIf="!loading && flights.length === 0" class="empty-state">
+          <h5>No flights found</h5>
+          <p>Try different search criteria</p>
+          <button class="btn-primary" (click)="goBack()">
+            Search Again
+          </button>
+        </div>
+
+        <!-- Flight List -->
+        <div *ngIf="!loading && filteredFlights.length > 0" class="flights-list">
+          <div *ngFor="let flight of filteredFlights" class="flight-card">
+            
+            <div class="flight-main">
+              <div class="airline-section">
+                <div class="airline-logo">{{getAirlineInitials(flight.airline)}}</div>
+                <div class="airline-info">
+                  <div class="airline-name">{{flight.airline}}</div>
+                  <div class="flight-number">{{flight.flightNumber}}</div>
+                </div>
+              </div>
+
+              <div class="route-section">
+                <div class="departure">
+                  <div class="time">{{flight.departureTime}}</div>
+                  <div class="city">{{flight.source}}</div>
+                </div>
+                
+                <div class="flight-path">
+                  <div class="duration">{{flight.duration}}</div>
+                  <div class="path-line"></div>
+                  <div class="stops">Non-stop</div>
+                </div>
+                
+                <div class="arrival">
+                  <div class="time">{{flight.arrivalTime}}</div>
+                  <div class="city">{{flight.destination}}</div>
+                </div>
+              </div>
+
+              <div class="price-section">
+                <div class="price">₹{{flight.price | number}}</div>
+                <div class="price-label">per person</div>
+              </div>
+            </div>
+
+            <div class="flight-footer">
+              <div class="flight-details">
+                <span class="detail-item">Economy</span>
+                <span class="detail-item">Baggage: 20kg</span>
+                <span class="detail-item" *ngIf="flight.aircraft">{{flight.aircraft}}</span>
+              </div>
+              <button class="book-btn" (click)="select(flight)">
+                Select Flight
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filtered Results Empty -->
+        <div *ngIf="!loading && flights.length > 0 && filteredFlights.length === 0" class="empty-state">
+          <h5>No flights match your filters</h5>
+          <p>Try adjusting your filters</p>
+          <button class="btn-secondary" (click)="clearFilters()">
+            Clear Filters
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
